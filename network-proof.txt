@@ -1,0 +1,25 @@
+=== ISOLATION PROOF - Clinic Lab ===
+Date: $(date)
+VM: Ubuntu VirtualBox
+
+1. External ping FAIL (Expected for isolated network):
+$ ping -c 2 8.8.8.8
+PING 8.8.8.8 - 2 packets transmitted, 0 received, 100% packet loss
+Result: Network is unreachable / 100% loss = ISOLATED ✅
+
+2. Internal traffic WORKS (localhost):
+$ ping -c 2 127.0.0.1
+PING 127.0.0.1 - 2 packets transmitted, 2 received, 0% packet loss
+Result: Internal communication OK ✅
+
+Conclusion: VM is isolated from internet but internal network works.
+PING 127.0.0.1 (127.0.0.1) 56(84) bytes of data.
+64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.034 ms
+64 bytes from 127.0.0.1: icmp_seq=2 ttl=64 time=0.030 ms
+
+--- 127.0.0.1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1013ms
+rtt min/avg/max/mdev = 0.030/0.032/0.034/0.002 ms
+
+External test (will fail if isolated):
+ping: connect: Network is unreachable
