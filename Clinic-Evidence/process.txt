@@ -1,0 +1,2 @@
+vboxuser    4802  0.0  0.6  37612 21768 pts/0    S+   09:17   0:00 python3 clinic_app.py
+vboxuser    5252  0.0  0.0   9316  2608 pts/1    S+   09:44   0:00 grep --color=auto clinic

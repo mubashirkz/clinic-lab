@@ -1,0 +1,19 @@
+--- TRY http://127.0.0.1:8000 ---
+
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>Secure Clinic Appointment System</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 40px;
+                        background: #f4f6f8;
+                    }
+                    .header {
+                        background: #243447;
+                        color: white;
+                        padding: 25px;
+     
+--- TRY http://127.0.0.1:5000 ---
+Failed 5000: <urlopen error [Errno 111] Connection refused>
