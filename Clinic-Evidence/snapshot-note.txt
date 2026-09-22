@@ -1,0 +1,4 @@
+Method: VirtualBox VM snapshot.
+Adapter1 Host-only 192.168.50.10 for isolation, Adapter2 NAT on for git push internet.
+Steps: 1) App running on 192.168.50.10:8000, fetched app_output.txt 3220 bytes via curl. 2) Took snapshot before-stop-test. 3) Ran pkill -f clinic_app.py and powered off VM. 4) Restored snapshot via Snapshots -> Restore. 5) Rebooted, started app, fetched identical 3220 bytes.
+Result: Restore successful, identical data.
