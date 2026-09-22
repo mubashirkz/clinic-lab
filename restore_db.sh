@@ -15,5 +15,3 @@ echo "[*] Verifying snapshot was restored..."
 VBoxManage snapshot "$VM_NAME" list --details
 
 echo "[+] Evidence: Snapshot $SNAPSHOT_NAME restored successfully at $(date)"
-chmod +x restore_db.sh
-cat restore_db.sh
