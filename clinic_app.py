@@ -4,7 +4,7 @@ from urllib.parse import parse_qs
 from html import escape
 
 DB = "clinic.db"
-HOST = "0.0.0.0"
+HOST = "192.168.50.10"
 PORT = 8000
 
 def get_db():
