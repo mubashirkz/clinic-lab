@@ -64,3 +64,63 @@ The script handles missing, unreadable, and other inaccessible log-file errors a
 ### Ethical Scope
 
 All testing was performed against the locally hosted clinic application inside the authorized isolated clinic-lab environment. No external systems were targeted.
+
+
+## Task 3 - Linux Host Hardening
+
+This task hardens the clinic-lab Ubuntu host and verifies that simulated malicious login attempts do not result in successful authentication.
+
+### SSH Hardening
+
+The OpenSSH server was configured with:
+
+- PermitRootLogin no
+- PubkeyAuthentication yes
+- PasswordAuthentication no
+- KbdInteractiveAuthentication no
+
+SSH key-based authentication was tested successfully using an ED25519 key.
+
+### Firewall Hardening
+
+UFW was enabled with a default deny policy for incoming traffic.
+
+Only the following required ports are allowed:
+
+- 22/tcp - SSH
+- 80/tcp - HTTP
+- 443/tcp - HTTPS
+
+### Disabled Unnecessary Services
+
+The following unnecessary services were disabled:
+
+- bluetooth.service
+- cups.service
+- cups-browsed.service
+- avahi-daemon.service
+- ModemManager.service
+
+CUPS and Avahi triggering sockets were also disabled where applicable.
+
+### Automatic Security Updates
+
+Automatic security updates were enabled using unattended-upgrades.
+
+The configuration enables daily package-list updates and unattended upgrades.
+
+### Attack Re-Test
+
+The simulated failed-login attack from Task 2 was repeated after hardening.
+
+Ten login attempts were sent to the local clinic application. All ten attempts returned HTTP 401 Unauthorized and were recorded as EVENT=FAILED_LOGIN.
+
+No successful login entries were found in the ten attack attempts.
+
+### Result
+
+The host was hardened by restricting SSH authentication, enabling UFW, disabling unnecessary services, and enabling automatic security updates. The repeated login simulation produced no successful authentication entries.
+
+### Ethical Scope
+
+All testing was performed against the locally hosted clinic application inside the authorized isolated clinic-lab environment.
