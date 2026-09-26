@@ -237,3 +237,12 @@ application's authentication behaviour.
 The appointment page has no authentication protection.
 Rate limiting, account lockout and HTTPS are not implemented.
 Use sample data only; this is a training lab.
+
+### Task 4 Demo
+
+- [Before-and-after demo instructions](docs/DEMO.md)
+- [Login demonstration script](scripts/demo_login.py)
+- [Saved demo evidence](output/)
+
+With the application running inside Ubuntu, run:
+`python3 scripts/demo_login.py`

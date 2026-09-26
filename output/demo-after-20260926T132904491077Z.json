@@ -1,0 +1,31 @@
+{
+  "time_utc": "2026-09-26T13:29:04.491077+00:00",
+  "phase": "after hardening",
+  "target": "http://192.168.50.10:8000/login",
+  "http_statuses": [
+    401,
+    401,
+    401,
+    401,
+    401,
+    401,
+    401,
+    401,
+    401,
+    401
+  ],
+  "new_log_entries": [
+    "2026-09-26 13:29:04 IP=192.168.50.10 METHOD=POST PATH=/login STATUS=401 EVENT=FAILED_LOGIN",
+    "2026-09-26 13:29:04 IP=192.168.50.10 METHOD=POST PATH=/login STATUS=401 EVENT=FAILED_LOGIN",
+    "2026-09-26 13:29:04 IP=192.168.50.10 METHOD=POST PATH=/login STATUS=401 EVENT=FAILED_LOGIN",
+    "2026-09-26 13:29:04 IP=192.168.50.10 METHOD=POST PATH=/login STATUS=401 EVENT=FAILED_LOGIN",
+    "2026-09-26 13:29:04 IP=192.168.50.10 METHOD=POST PATH=/login STATUS=401 EVENT=FAILED_LOGIN",
+    "2026-09-26 13:29:04 IP=192.168.50.10 METHOD=POST PATH=/login STATUS=401 EVENT=FAILED_LOGIN",
+    "2026-09-26 13:29:04 IP=192.168.50.10 METHOD=POST PATH=/login STATUS=401 EVENT=FAILED_LOGIN",
+    "2026-09-26 13:29:04 IP=192.168.50.10 METHOD=POST PATH=/login STATUS=401 EVENT=FAILED_LOGIN",
+    "2026-09-26 13:29:04 IP=192.168.50.10 METHOD=POST PATH=/login STATUS=401 EVENT=FAILED_LOGIN",
+    "2026-09-26 13:29:04 IP=192.168.50.10 METHOD=POST PATH=/login STATUS=401 EVENT=FAILED_LOGIN"
+  ],
+  "passed": true,
+  "limitation": "The login endpoint always rejects requests. This test verifies responses and logging, not a change in authentication or host settings."
+}
