@@ -246,3 +246,17 @@ Use sample data only; this is a training lab.
 
 With the application running inside Ubuntu, run:
 `python3 scripts/demo_login.py`
+
+### Repository Secret Review
+
+- [Secret checks, results and limitations](docs/SECRET_REVIEW.md)
+
+### Submission Note
+
+I gathered the previous deliverables, added setup and hand-over
+instructions, created a security checklist, and ran a login demo
+that verified ten HTTP 401 responses and ten new failure logs.
+I also checked Git history for common secret patterns. The
+difficult part was separating host-hardening evidence from the
+application's simulated login behaviour. Real authentication,
+rate limiting and HTTPS were left out.
